@@ -65,6 +65,9 @@ router.get("/signin", (req, res) => res.render("home", { currentUser: req.user, 
 //user register
 router.get("/register", (req, res) => res.render("./partials/register", { currentUser: req.user, layout:'./layouts/layout_landing', intro:intro, msg_highlight1: msg_highlight1, msg_highlight2:msg_highlight2 }));
 
+//user registeration info
+router.get("/info", (req, res) => res.render("./partials/info", { currentUser: req.user, layout:'./layouts/layout_landing', intro:intro, msg_highlight1: msg_highlight1, msg_highlight2:msg_highlight2 }));
+
 //user profile
 router.get("/profile", ensureAuthenticated, (req, res) => res.render("dashboard",
   {
@@ -244,7 +247,7 @@ router.post("/register", (req, res) => {
                   'You are now registered and can log in'
                 );
                 //res.redirect('/users/signin');
-                res.redirect('/users');
+                res.redirect('/users/info');
               })
               .catch(err => console.log(err));
           });
