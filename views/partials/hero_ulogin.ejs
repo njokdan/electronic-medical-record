@@ -1,0 +1,30 @@
+<form action="/users/signin" method="POST" class="form-box">
+    <h3 class="h4 text-black mb-4"><%- intro %></h3>
+    <div class="form-group">
+      <!-- <input type="text" class="form-control" placeholder="Email Addresss"> -->
+      <input type="email"
+        class="form-control" 
+        id="exampleInputEmail1" 
+        aria-describedby="emailHelp" 
+        placeholder="Enter email"
+        name="email"
+        value="<%= typeof email != 'undefined' ? email : '' %>"
+        >
+    </div>
+    <div class="form-group">
+      <!-- <input type="password" class="form-control" placeholder="Password"> -->
+      <input type="password" 
+        class="form-control" 
+        id="exampleInputPassword1" 
+        placeholder="Password"
+        name="password"
+        value="<%= typeof password != 'undefined' ? password : '' %>"
+        >
+    </div>
+    <!-- <div class="form-group mb-4">
+      <input type="password" class="form-control" placeholder="Re-type Password">
+    </div> -->
+    <div class="form-group">
+      <input type="submit" class="btn btn-primary btn-pill" value="Continue">
+    </div>
+  </form>

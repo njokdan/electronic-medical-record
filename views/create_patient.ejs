@@ -1,0 +1,179 @@
+<div class="col-lg-12">
+    <div class="white_box mb_30">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- sign_in  -->
+                <div class="modal-content cs_modal">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Register Patient</h5>
+                    </div>
+                    <%- include("./partials/messages"); %>
+                    <div class="modal-body">
+                        <form action="/users/createp" method="POST" >
+                            <!-- <div class="form-row social_login_btn">
+                                <div class="form-group col-md-12 text-center">
+                                    <a href="#" class="btn_1 full_width"><i class="fab fa-facebook-square"></i>Log in with Facebook</a>
+                                </div>
+                                <div class="form-group col-md-12 text-center">
+                                    <a href="#" class="btn_1 full_width"><i class="fab fa-google"></i>Log in with Google</a>
+                                </div>
+                            </div>
+                            <div class="border_style">
+                                <span>Or</span>
+                            </div> -->
+                            <div class="form-group row">
+                                <div class="col-md-6 mb-3 mb-lg-0">
+                                    <input type="text" 
+                                    class="form-control" 
+                                    placeholder="First name"
+                                    name="fname"
+                                    value="<%= typeof fname != 'undefined' ? fname : '' %>"
+                                    >
+                                </div>
+                                <div class="col-md-6 mb-3 mb-lg-0">
+                                    <input type="text" 
+                                    class="form-control" 
+                                    placeholder="Last name"
+                                    name="lname"
+                                    value="<%= typeof lname != 'undefined' ? lname : '' %>"
+                                    >
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6 mb-3 mb-lg-0">
+                                    <input type="number" 
+                                    class="form-control" 
+                                    placeholder="Age"
+                                    name="age"
+                                    value="<%= typeof age != 'undefined' ? age : '' %>"
+                                    >
+                                </div>
+                                <div class="col-md-6 mb-3 mb-lg-0">
+                                    <select class="form-control" id="exampleFomControlSelect1" name="gender" value="<%= typeof gender != 'undefined' ? gender: '' %>">
+                                        <option value="" selected disabled hidden>Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6 mb-3 mb-lg-0">
+                                    <input type="number" 
+                                    class="form-control" 
+                                    placeholder="Height"
+                                    name="height"
+                                    value="<%= typeof height != 'undefined' ? height : '' %>"
+                                    >
+                                </div>
+                                <div class="col-md-6 mb-3 mb-lg-0">
+                                    <input type="number" 
+                                    class="form-control" 
+                                    placeholder="Weight"
+                                    name="weight"
+                                    value="<%= typeof weight != 'undefined' ? weight : '' %>"
+                                    >
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6 mb-3 mb-lg-0">
+                                    <select class="form-control" id="exampleFormControlSect1" name="ward" value="<%= typeof ward != 'undefined' ? ward: '' %>">
+                                        <option value="" selected disabled hidden>Ward</option>
+                                        <option value="lab_1">Lab 1</option>
+                                        <option value="lab_2">Lab 2</option>
+                                        <option value="emergency_1">Emergency 1</option>
+                                        <option value="emergency_2">Emergency 2</option>
+                                        <option value="class_1">Class 1</option>
+                                        <option value="class_2">Class 2</option>                        
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3 mb-lg-0">
+                                    <input type="text" 
+                                    class="form-control" 
+                                    placeholder="LGA"
+                                    name="lga"
+                                    value="<%= typeof lga != 'undefined' ? lga : '' %>"
+                                    >
+                                </div>                                
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6 mb-3 mb-lg-0">
+                                    <select class="form-control" id="exampleFormControlSelec1" name="state" value="<%= typeof state != 'undefined' ? state : '' %>">
+                                        <option value="" selected disabled hidden>State</option>
+                                        <option value="Abia">Abia</option>
+                                        <option value="Enugu">Enugu</option>
+                                        <option value="Imo">Imo</option>
+                                        <option value="Ogun">Ogun</option>
+                                        <option value="Lagos">Lagos</option>
+                                        <option value="Kaduna">Kaduna</option>                        
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3 mb-lg-0">
+                                    
+                                    <input type="text" 
+                                    class="form-control" 
+                                    name="patientid"
+                                    value="<%= typeof patientid != 'undefined' ? patientid : '' %>"
+                                    >
+                                </div>                                
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-6 mb-3 mb-lg-0">
+                                    <input type="text" class="form-control" placeholder="Enter your email" name="email">
+                                </div>
+                                
+                                <div class="col-md-6 mb-3 mb-lg-0">
+                                    
+                                    <input type="text" hidden class="form-control" value="<%= typeof patientid != 'undefined' ? patientid : '' %>" placeholder="Password" name="password">
+                                </div>                                
+                            </div>
+
+                            
+
+                            <div class="form-group row">
+                                <p>Capture Picture:</p>
+                                <input type="text" id="pictures" name="picture" hidden class="form-control" value="">
+                                <!-- value="<%= typeof picture != 'undefined' ? picture : '' %>"> -->
+                                <div class="col-md-6 mb-3 mb-lg-0">
+                                    <span id="play" class="btn_1 full_width text-center"> Start</span>
+                                    <video id="player" autoplay width=250 height=250></video>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3 mb-lg-0">
+                                    <span id="capture" class="btn_1 full_width text-center"> Capture</span>
+                                    <canvas id="canvas" width=250 height=250 style="margin-top:40px;"></canvas>
+                                </div>                                                          
+                            </div>
+                            <div class="form-group">
+                                <img id="snapToSave" src="" alt="img" height="240" width="240">
+                                <a id="download" download="face.jpg">
+                                    <button onclick="download();" align="center" style="margin: 20px 250px auto " class="btn btn-primary dropdown-toggle" type="button" >Download</button></a>
+                                    <input id="creator" name="createdby" value="<%= typeof createdby != 'undefined' ? createdby : '' %>" type="text" hidden class="form-control" >
+                                <button type="submit" name="submit" class="btn_1 full_width text-center"> Submit</button>
+                            </div>
+
+                            <div class="form-group">
+                                
+                                <!-- <input type="text" class="form-control" placeholder="Full Name"> -->
+                            </div>
+                            
+                            <!-- <div class="form-group cs_check_box">
+                                <input type="checkbox" id="check_box" class="common_checkbox">
+                                <label for="check_box">
+                                    Keep me up to date
+                                </label>
+                            </div> -->
+                            <!-- <button class="btn_1 full_width text-center"> Submit</button> -->
+                            <!-- <p>Need an account? <a data-toggle="modal" data-target="#sing_up" data-dismiss="modal"  href="#">Log in</a></p> -->
+                            <!-- <div class="text-center">
+                                <a href="#" data-toggle="modal" data-target="#forgot_password" data-dismiss="modal" class="pass_forget_btn">Forget Password?</a>
+                            </div> -->
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>

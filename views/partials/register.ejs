@@ -1,0 +1,171 @@
+<div class="site-section bg-dark" >
+
+</div>
+<div class="site-section bg-light " id="contact-section">
+    <div class="container">
+
+        
+      <div class="row justify-content-center">
+        <div class="col-md-7">
+
+          
+          <h2 class="section-title mb-3">Staff Registration</h2>
+          <p class="mb-5">Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+          <%- include("./messages"); %>
+          <form  action="/users/register" method="POST" data-aos="fade">
+            <!-- <div class="form-group row"> -->
+              <!-- <div class="col"> -->
+                <!-- <div class="col-md-6 mb-3 mb-lg-0"> -->
+                <!-- <input type="text" class="form-control" placeholder="First name"> -->
+                <div class="form-group row">
+                    <div class="col-md-6 mb-3 mb-lg-0">
+                        <input type="text" 
+                        class="form-control" 
+                        placeholder="First name"
+                        name="fname"
+                        value="<%= typeof fname != 'undefined' ? fname : '' %>"
+                        >
+                    </div>
+                    <div class="col-md-6 mb-3 mb-lg-0">
+                        <input type="text" 
+                        class="form-control" 
+                        placeholder="Last name"
+                        name="lname"
+                        value="<%= typeof lname != 'undefined' ? lname : '' %>"
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-6 mb-3 mb-lg-0">
+                        <input type="number" 
+                        class="form-control" 
+                        placeholder="Age"
+                        name="age"
+                        value="<%= typeof age != 'undefined' ? age : '' %>"
+                        >
+                    </div>
+                    <div class="col-md-6 mb-3 mb-lg-0">
+                        <select class="form-control" id="exampleFormControlSelect1" name="gender" value="<%= typeof gender!= 'undefined' ? gender: '' %>">
+                            <option value="" selected disabled hidden>Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>                        
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-6 mb-3 mb-lg-0">
+                        <select class="form-control" id="exampleFormControlSelect1" name="cadre" value="<%= typeof cadre!= 'undefined' ? cadre: '' %>">
+                            <option value="" selected disabled hidden>Cadre</option>
+                            <option value="doctor">Doctor</option>
+                            <option value="nurse">Nurse</option>
+                            <option value="radiologist">Radiologist</option>                           
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3 mb-lg-0">
+                        <select class="form-control" id="exampleFormControlSelect1" name="department" value="<%= typeof department!= 'undefined' ? department: '' %>">
+                            <option value="" selected disabled hidden>Department</option>
+                            <option value="attendant">Attendant</option>
+                            <option value="ward">Ward</option>
+                            <option value="neuro">Neuro</option>
+                            <option value="labour">Labour</option> 
+                            <option value="lab">Labour</option>                        
+                        </select>
+                    </div>
+                </div>
+
+            <!-- <div class="form-group row">
+                <div class="col-md-12">
+                    <input type="text" class="form-control" placeholder="Subject">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <input type="text" class="form-control" placeholder="Subject">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <input type="text" class="form-control" placeholder="Subject">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <input type="text" class="form-control" placeholder="Subject">
+                </div>
+            </div> -->
+
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <!-- <input type="text" class="form-control" placeholder="Subject"> -->
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email"
+                    class="form-control" 
+                    id="exampleInputEmail1" 
+                    aria-describedby="emailHelp" 
+                    placeholder="Enter email"
+                    name="email"
+                    value="<%= typeof email != 'undefined' ? email : '' %>"
+                    >
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <!-- <input type="text" class="form-control" placeholder="Subject"> -->
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" 
+                        class="form-control" 
+                        id="exampleInputPassword1" 
+                        placeholder="Password"
+                        name="password"
+                        value="<%= typeof password != 'undefined' ? password : '' %>"
+                    >
+                </div>
+            </div>
+            
+            <!-- <div class="form-group row">
+                <div class="col-md-12">
+                    <input type="text" class="form-control" placeholder="Subject">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <input type="text" class="form-control" placeholder="Subject">
+                </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-md-12">
+                <input type="text" class="form-control" placeholder="Subject">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-md-12">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-12">
+                <textarea class="form-control" id="" cols="30" rows="10" placeholder="Write your message here."></textarea>
+              </div>
+            </div> -->
+
+            <div class="form-group row">
+              <div class="col-md-6">
+                
+                <input type="submit" class="btn btn-primary py-3 px-5 btn-block btn-pill" value="Send Message">
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
